@@ -36,8 +36,8 @@ public class DialogNode : BaseDialogNode
 		DialogLine = "Insert dialog text here";
 		CharacterPotrait = null;
 	}
-
-	public override void NodeGUI()
+#if UNITY_EDITOR
+    public override void NodeGUI()
 	{
 		EditorGUILayout.BeginVertical("Box");
 		GUILayout.BeginHorizontal();
@@ -67,8 +67,9 @@ public class DialogNode : BaseDialogNode
 		}
 		GUILayout.EndHorizontal();
 	}
+#endif
 
-	public override BaseDialogNode Input(int inputValue)
+    public override BaseDialogNode Input(int inputValue)
 	{
 		switch (inputValue)
 		{

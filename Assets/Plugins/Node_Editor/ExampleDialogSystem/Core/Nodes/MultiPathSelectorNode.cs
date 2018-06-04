@@ -43,8 +43,8 @@ public class MultiPathSelectorNode : BaseDialogNode
 
 		AddNewOption();
 	}
-
-	public override void NodeGUI()
+#if UNITY_EDITOR
+    public override void NodeGUI()
 	{
 		GUILayout.BeginHorizontal();
 		ValueToTest =
@@ -79,8 +79,8 @@ public class MultiPathSelectorNode : BaseDialogNode
 		GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
 	}
-
-	private void RemoveLastOption()
+#endif
+    private void RemoveLastOption()
 	{
 		if (_options.Count > 1)
 		{

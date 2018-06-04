@@ -17,6 +17,7 @@ public class ControllerBackend : MonoBehaviour {
 	float timeDead = 0;
 
     public PlayerMovement moverScript;
+    TeacherCopies.PlayerMovementTeacherCopy moverScriptTeacherCopy;
 
 	public AudioSource deathSound;
 	public AudioSource mainTrack;
@@ -29,6 +30,8 @@ public class ControllerBackend : MonoBehaviour {
         //convert targets from Vector3 to Quaternion.
         targetUpQuaternion = Quaternion.Euler(targetUpRotation);
 		targetDownQuaternion = Quaternion.Euler(targetDownRotation);
+
+        moverScriptTeacherCopy = GetComponent<TeacherCopies.PlayerMovementTeacherCopy>();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +39,7 @@ public class ControllerBackend : MonoBehaviour {
         if (playerdead){
 			timeDead += Time.deltaTime;
             moverScript.enabled = false;
+            if(moverScriptTeacherCopy) moverScriptTeacherCopy.enabled = false;
 
 			if(timeDead >= deathTimer){
 				Scene currentScene = SceneManager.GetActiveScene();
@@ -45,6 +49,7 @@ public class ControllerBackend : MonoBehaviour {
 		}
         else
         {
+            if (moverScriptTeacherCopy) moverScriptTeacherCopy.enabled = true;
             if (rb.velocity.y > 0)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetUpQuaternion, rotationTime * Time.deltaTime);

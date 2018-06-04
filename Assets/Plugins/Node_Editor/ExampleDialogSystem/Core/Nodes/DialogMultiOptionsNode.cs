@@ -51,8 +51,8 @@ public class DialogMultiOptionsNode : BaseDialogNode
 
 		AddNewOption();
 	}
-
-	public override void NodeGUI()
+#if UNITY_EDITOR
+    public override void NodeGUI()
 	{
 		EditorGUILayout.BeginVertical("Box");
 		GUILayout.BeginHorizontal();
@@ -143,8 +143,8 @@ public class DialogMultiOptionsNode : BaseDialogNode
 		}
 		GUILayout.EndVertical();
 	}
-
-	private void AddNewOption()
+#endif
+    private void AddNewOption()
 	{
 		DataHolderForOption option = new DataHolderForOption {OptionDisplay = "Write Here"};
 		CreateValueConnectionKnob(dynaCreationAttribute);

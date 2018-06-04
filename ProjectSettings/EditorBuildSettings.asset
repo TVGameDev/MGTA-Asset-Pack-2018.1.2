@@ -4,4 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SplashScene.unity
+    guid: a1c89a454f5a27f43ad247b5213d686c
+  - enabled: 1
+    path: Assets/MGTA Workshop Projects/Tappy Plane/Scenes/TappyPlaneMainGame.unity
+    guid: 89adcf9a065fcae4faa8892fe1fcc305
+  - enabled: 1
+    path: Assets/MGTA Workshop Projects/First Person Game/3D Playground - First Person.unity
+    guid: 9b26b0732cd50254c9fb91714799de2c
+  - enabled: 1
+    path: Assets/MGTA Workshop Projects/Top-Down RPG/Tile Based Example.unity
+    guid: 11299ccb85b8e314e98b6b81f6fc11ab
+  - enabled: 1
+    path: Assets/MGTA Workshop Projects/Sidescroller/Platformer Demo.unity
+    guid: 243d890830e99458a9d4f00ccd11a4e8
+  m_configObjects: {}
